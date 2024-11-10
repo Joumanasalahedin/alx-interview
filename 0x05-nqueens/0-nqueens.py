@@ -2,6 +2,7 @@
 """ N queens """
 import sys
 
+
 def queens(n, i=0, a=[], b=[], c=[]):
     """ find possible positions for the queens """
     if i < n:
@@ -10,6 +11,7 @@ def queens(n, i=0, a=[], b=[], c=[]):
                 yield from queens(n, i + 1, a + [j], b + [i + j], c + [i - j])
     else:
         yield a
+
 
 def solve(n):
     """ solve the N Queens problem """
@@ -22,6 +24,7 @@ def solve(n):
         print(k)
         k = []
         i = 0
+
 
 def main():
     """ parse input and initiate the solution """
@@ -40,6 +43,7 @@ def main():
         sys.exit(1)
 
     solve(N)
+
 
 if __name__ == "__main__":
     main()
