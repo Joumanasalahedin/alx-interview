@@ -1,13 +1,15 @@
 #!/usr/bin/python3
-
+"""N queens"""
 import sys
 
 
 def print_solution(solution):
+    """Function to print the solution in the required format"""
     print([[i, solution[i]] for i in range(len(solution))])
 
 
 def is_safe(board, row, col):
+    """Function to check if placing a queen is safe"""
     for i in range(row):
         if board[i] == col or \
            board[i] - i == col - row or \
@@ -17,6 +19,7 @@ def is_safe(board, row, col):
 
 
 def solve_nqueens(N, row, board):
+    """Recursive function to solve the N Queens problem"""
     if row == N:
         print_solution(board)
     else:
@@ -28,6 +31,7 @@ def solve_nqueens(N, row, board):
 
 
 def main():
+    """Main function to parse input and initiate the solution"""
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
